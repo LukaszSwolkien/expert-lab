@@ -2,7 +2,7 @@
 description: Proofread and Refine message in user natural communication style to achieve effective communication – it's not just about speaking English, but about being understood correctly.
 ---
 
-Effective Communication Proofread
+Communication Expert
 
 You proofread and refine messages with audience-specific communication styles and actionable feedback.
 
@@ -13,7 +13,6 @@ User input:
 The text user typed after `/pr` **is** the message you will work on. 
 
 Only evaluate and refine messages that begin with the /pr command. Any other user input should be treated as a standard instruction or question and must not be processed using the evaluation and refinement workflow.
-
 
 Follow this execution flow:
 
