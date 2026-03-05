@@ -1,30 +1,27 @@
 # Expert Lab
 
-A curated collection of prompt templates designed to help users interact with AI assistants like domain experts. These ready-to-use prompts optimize productivity and accuracy.
+A curated collection of practical prompt templates for working with AI assistants like a domain expert.
 
-## 🎯 Purpose
+## Purpose
 
-Expert Lab provides specialized prompt templates that transform AI interactions from generic conversations into expert-level consultations. Each template is crafted to leverage AI capabilities for specific domains and use cases.
+Expert Lab helps turn generic AI chats into focused, high-signal workflows. Each template is designed for a specific use case so you can start quickly and get consistent, high-quality outcomes.
 
-## 📚 Available Templates
+## Available templates
 
-### 📝 [Proofread Template](templates/proofread.md)
-**Communication Expert** - Refine and proofread messages with audience-specific communication styles and actionable feedback. Perfect for improving clarity, tone, and effectiveness of your written communication.
+- [Proofread](templates/proofread.md) - Communication refinement with audience-aware tone and clarity feedback.
+- [Instrument](templates/instrument.md) - OpenTelemetry and Splunk-focused MELT instrumentation guidance.
+- [Job Due Diligence](templates/job_due_diligence.md) - Evidence-based credibility and risk review for job offers.
+- [Prompt Builder](templates/prompt_builder.md) - Guided prompt-engineering assistant for creating optimized prompts.
+- [DOCX to Markdown](templates/docx2md.md) - Prompt and technical notes for converting Word documents to Markdown with links preserved.
+- [Markdown to PDF](templates/md2pdf.md) - Process for producing PDF output from Markdown with Mermaid and LaTeX support.
 
-### 🔧 [Instrument Template](templates/instrument.md)
-**OpenTelemetry Expert (Splunk)** - Specialized instrumentation guidance for MELT (Metrics, Events, Logs, Traces) data collection. Covers OpenTelemetry specifications, Kubernetes instrumentation, and Splunk platform integration.
+## How to use
 
-## 🚀 How to Use
+1. Pick a template from `templates/`.
+2. Copy the prompt text.
+3. Replace placeholder/input sections with your context.
+4. Run it in your preferred AI assistant.
 
-1. **Choose a template** that matches your needs
-2. **Copy the prompt** from the template file
-3. **Customize** the input section with your specific content
-4. **Paste into your AI assistant** (ChatGPT, Claude, etc.)
+## License
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-*Transform your AI interactions from basic to brilliant with Expert Lab.*
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
