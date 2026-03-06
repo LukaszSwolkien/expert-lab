@@ -11,7 +11,6 @@ Expert Lab helps turn generic AI chats into focused, high-signal workflows. Each
 - [Proofread](templates/proofread.md) - Communication refinement with audience-aware tone and clarity feedback.
 - [Instrument](templates/instrument.md) - OpenTelemetry and Splunk-focused MELT instrumentation guidance.
 - [Job Due Diligence](templates/job_due_diligence.md) - Evidence-based credibility and risk review for job offers.
-- [Prompt Builder](templates/prompt_builder.md) - Guided prompt-engineering assistant for creating optimized prompts.
 - [DOCX to Markdown](templates/docx2md.md) - Prompt and technical notes for converting Word documents to Markdown with links preserved.
 - [Markdown to PDF](templates/md2pdf.md) - Process for producing PDF output from Markdown with Mermaid and LaTeX support.
 
