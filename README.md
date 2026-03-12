@@ -1,26 +1,40 @@
 # Expert Lab
 
-A curated collection of practical prompt templates for working with AI assistants like a domain expert.
+A curated collection of expert personas and reusable skills for daily AI-assisted work.
 
 ## Purpose
 
-Expert Lab helps turn generic AI chats into focused, high-signal workflows. Each template is designed for a specific use case so you can start quickly and get consistent, high-quality outcomes.
+Expert Lab helps turn generic AI chats into focused, high-signal workflows by combining:
+- **Personas** (`personas/`) - how the assistant should think and respond for a given task type
+- **Skills** (`skills/`) - how the assistant should execute specific operational workflows
 
-## Available templates
+The routing logic and execution rules are defined in `AGENTS.md` and `personas/personas-map.md`.
 
-- [Proofread](templates/proofread.md) - Communication refinement with audience-aware tone and clarity feedback.
-- [Instrument](templates/instrument.md) - OpenTelemetry and Splunk-focused MELT instrumentation guidance.
-- [Job Due Diligence](templates/job_due_diligence.md) - Evidence-based credibility and risk review for job offers.
-- [Prompt Builder](templates/prompt_builder.md) - Guided prompt-engineering assistant for creating optimized prompts.
-- [DOCX to Markdown](templates/docx2md.md) - Prompt and technical notes for converting Word documents to Markdown with links preserved.
-- [Markdown to PDF](templates/md2pdf.md) - Process for producing PDF output from Markdown with Mermaid and LaTeX support.
+## Personas
+
+- [MELT Expert](personas/melt-expert.md) - OpenTelemetry and Splunk/AppDynamics instrumentation support.
+- [Agentic Observability Architect](personas/agentic-observability.md) - Architecture brainstorming and feasibility reviews for dual-agent observability systems.
+- [Due Diligence Expert](personas/due-diligence-expert.md) - Job-offer and recruiter credibility verification using evidence-based analysis.
+- [Communication Expert](personas/communication-expert.md) - Proofreading and audience-tailored communication refinement.
+- [Prompt Builder Expert](personas/prompt-builder-expert.md) - Adaptive prompt creation and optimization workflow.
+- [Tech Doc Assistant](personas/tech-doc-assistant.md) - Document-first technical educator with progressive depth and knowledge gap detection.
+
+## Skills
+
+- [DOCX to Markdown](skills/docx-to-md/SKILL.md)
+- [Markdown to DOCX](skills/md-to-docx/SKILL.md)
+- [Markdown to PDF](skills/md-to-pdf/SKILL.md)
+- [PDF to Markdown](skills/pdf-to-md/SKILL.md)
+- [Screenshot to Markdown](skills/screenshot-to-md/SKILL.md)
 
 ## How to use
 
-1. Pick a template from `templates/`.
-2. Copy the prompt text.
-3. Replace placeholder/input sections with your context.
-4. Run it in your preferred AI assistant.
+1. Start in auto-routing mode using `personas/personas-map.md`.
+2. Override explicitly when needed (`Use persona X`, `Use skills A, B`).
+3. Let the agent follow `AGENTS.md` execution order:
+   - select persona
+   - select relevant skills
+   - execute with persona style + skill workflow
 
 ## License
 

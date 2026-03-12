@@ -1,78 +1,45 @@
-# AI Agent Instructions
+# Agent Operating Guide
 
----
+This project uses two reusable layers:
+- **Personas** in `personas/` (how to think/respond)
+- **Skills** in `skills/` (how to execute specific tasks)
 
-# Code Review
+## Persona Selection (Default Behavior)
 
-When reviewing code, check for these issues:
+1. Start by reading `personas/personas-map.md`.
+2. Match the user request to the best persona from the routing table.
+3. If classification is ambiguous, ask one short clarification question.
+4. If no better match is found, default to `prompt-builder-expert`.
+5. Load the selected persona file from `personas/`.
+6. Explicit user instruction always overrides automatic persona selection.
 
-| Issue | Look For | Fix |
-|-------|----------|-----|
-| Magic numbers | Hardcoded values in logic | Extract to named constants |
-| Duplicated logic | Same code in multiple places | Extract to shared function/module |
-| Dead code | Unused parameters, variables, imports | Remove |
-| Missing validation | User inputs not checked | Add boundary checks |
-| Resource leaks | Objects not cleaned up | Add proper cleanup/disposal |
-| Repeated initialization | Same setup on every call | Cache or initialize once |
-| Poor error handling | Silent failures, missing logs | Add logging and user feedback |
+## Skill Selection
 
-**Prioritize issues by impact**: security > correctness > performance > maintainability.
+- Skills are persona-agnostic and can be used with any persona.
+- Select skills from `skills/` based on task intent and file type.
+- Multiple skills may be combined in one task when useful.
 
----
+## Execution Order
 
-# Debugging
+1. Determine persona (`personas-map` -> persona file).
+2. Determine required skills (`skills/`).
+3. Execute task using persona style + skill workflow.
 
-1. **Reproduce first** - Confirm the issue exists and understand exact conditions
-2. **Add logging** - Trace data flow at key points (inputs, transformations, outputs)
-3. **Verify assumptions** - Check paths, values, conditions that "should" work
-4. **Check platform differences** - File paths, bundling, environment variables
-5. **Fix root cause** - Don't mask symptoms with defensive code
+## User Control Commands
 
----
+Respect these instructions when provided by the user:
+- "Use persona `X`" -> force persona `X`.
+- "Use skills `A`, `B`" -> force listed skills.
+- "Auto persona" -> choose persona from `personas/personas-map.md`.
+- `/none` -> skip persona selection entirely; respond without any persona style.
 
-# Refactoring
+## Output Discipline
 
-| Goal | Action |
-|------|--------|
-| Remove duplication | Extract shared logic to dedicated module |
-| Eliminate magic numbers | Move to named constants in central location |
-| Reduce coupling | Make dependencies explicit, optional sections truly optional |
-| Simplify | Remove unused code, merge redundant abstractions |
-
-**Keep changes minimal** - refactor only what's needed, don't over-engineer.
-
----
-
-# Unit Tests
-
-## Before Writing Tests
-
-1. **Understand domain constraints** - Ask about valid value ranges, physical limits, business rules
-2. **Review existing tests** - Check for duplicates before creating new tests
-3. **Identify testable logic** - Focus on code with behavior, not trivial getters/constants
-
----
-
-## Test Requirements
-
-Every test you create MUST:
-
-- [ ] Use **realistic inputs** that can occur in production
-- [ ] Test **actual logic**, not trivial code (getters, constants)
-- [ ] Be **unique** - no overlap with existing test coverage
-- [ ] Have **meaningful assertions** that verify behavior
-- [ ] Follow naming: `test_<unit>_<scenario>_<expected_outcome>`
-- [ ] Use **Arrange-Act-Assert** structure
-
----
-
-## Self-Review Before Submitting
-
-After creating tests, verify each one:
-
-1. Can these input values actually occur in the real system?
-2. Does this test duplicate existing coverage?
-3. Does this test verify meaningful behavior?
-4. Are assertions testing the right thing?
-
-If you find issues, fix them before presenting the tests.
+- Always declare the active execution context at the start of each response:
+  - `Persona: <persona-name>` or `Persona: none`
+  - `Skills: <skill-a>, <skill-b>` or `Skills: none`
+- If persona/skills change during the conversation, explicitly announce the new selection in the next response.
+- If automatic routing is used, state that selection came from `personas/personas-map.md`.
+- Follow the selected persona's response format and constraints.
+- Keep answers concise unless the user asks for depth.
+- When a skill is used, follow its validation checklist before final response.
