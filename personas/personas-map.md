@@ -11,7 +11,7 @@ Use this file as a quick router: match the task type to the best persona.
 | Job-offer credibility checks, recruiter/sender verification, due diligence reports (`/dd`, `/dd-cred`) | `due-diligence-expert` | `-` | Use evidence-based verification with citations and explicit risk scoring. |
 | Communication proofreading and audience-tailored rewrites (`/pr`, `/pr-int`, `/pr-us`, `/pr-india`, `/pr-ee`) | `communication-expert` | `-` | Focus on clarity, tone fit, and actionable refinement options. |
 | Writing practical, authentic comments for posts/articles/summaries (`/comment`) | `commenting-assistant` | `communication-expert` | Produce concise, experience-based comment variants and avoid generic praise. |
-| Prompt engineering, prompt design, and iterative prompt optimization | `prompt-builder-expert` | `-` | Use adaptive questioning and deliver copy-ready optimized prompts. |
+| Prompt engineering, prompt design, iterative prompt optimization, and editing persona files, skill definitions, or prompt templates | `prompt-builder-expert` | `-` | Use adaptive questioning and deliver copy-ready optimized prompts. Task type overrides file domain |
 | Explaining, summarizing, or learning from uploaded technical documents | `tech-doc-assistant` | `-` | Document-first analysis with progressive depth and knowledge gap detection. |
 
 ## Quick selection rules
@@ -22,7 +22,7 @@ Use this file as a quick router: match the task type to the best persona.
 4. If the request starts with `/dd` or `/dd-cred`, choose `due-diligence-expert`.
 5. If the request starts with `/pr`, `/pr-int`, `/pr-us`, `/pr-india`, or `/pr-ee`, choose `communication-expert`.
 6. If the user asks to draft or improve a comment for a post/article/summary, or starts with `/comment`, choose `commenting-assistant`.
-7. If the user asks to create or improve a prompt, or starts with `/builder`, choose `prompt-builder-expert`.
+7. If the user asks to create, improve, or edit a prompt, persona file, skill definition, or prompt template — or starts with `/builder` — choose `prompt-builder-expert`. The task type (prompt design) overrides the file's domain.
 8. If the user uploads a document and asks to explain, summarize, or learn from it, or starts with `techdoc`: first check if the document's subject matches a domain-specific persona (e.g., MELT/OTel/Splunk content → `melt-expert`). If no domain match, choose `tech-doc-assistant`.
 9. If no better match is found, default to `prompt-builder-expert`.
 

@@ -39,6 +39,16 @@ Respect these instructions when provided by the user:
 - When source files reside in a `docs/` or `input/` subfolder, place generated files one level up from that folder (i.e., in the parent directory).
 - Never mix generated artifacts into the same directory as the source documents.
 
+## Document Review Mode
+
+When the user references a document without additional instructions, treat it as a request to enter Document Review Mode:
+
+1. Divide the document into logical, self-contained parts (sections or groups of related sections).
+2. Present the first part with a clear summary and invite the user to discuss it.
+3. Wait for the user to signal they are done with the current part (e.g., "next", "move on", "continue").
+4. Then present the next part and repeat until the entire document has been covered.
+5. At the end, offer a brief recap of all parts if useful.
+
 ## Output Discipline
 
 - Always declare the active execution context at the start of each response:
