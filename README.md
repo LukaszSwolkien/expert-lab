@@ -14,6 +14,7 @@ personas/               # how the assistant thinks and responds
   prompt-builder-expert.md
   tech-doc-assistant.md
 skills/                 # how the assistant executes specific tasks
+  confluence-doc-to-md/
   docx-to-md/
   md-to-docx/
   md-to-pdf/
@@ -40,6 +41,7 @@ Use `/none` to skip persona selection entirely.
 
 | Skill | Description |
 |---|---|
+| [Confluence DOC to Markdown](skills/confluence-doc-to-md/SKILL.md) | Convert Confluence-exported `.doc` (MIME/HTML) to Markdown |
 | [DOCX to Markdown](skills/docx-to-md/SKILL.md) | Convert Word documents to structured Markdown |
 | [Markdown to DOCX](skills/md-to-docx/SKILL.md) | Convert Markdown to Word documents |
 | [Markdown to PDF](skills/md-to-pdf/SKILL.md) | Export Markdown to PDF with Mermaid and LaTeX support |
@@ -62,7 +64,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -71,7 +73,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```

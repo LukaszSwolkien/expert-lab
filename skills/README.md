@@ -24,6 +24,11 @@ This directory contains reusable skills for document conversion and extraction w
 - Purpose: Convert PDF to Markdown (text-first with OCR fallback).
 - Typical triggers: "pdf to markdown", "extract text from pdf", "convert scanned pdf to md".
 
+### `confluence-doc-to-md`
+- Path: `skills/confluence-doc-to-md/SKILL.md`
+- Purpose: Convert Confluence-exported `.doc` files (MIME/HTML format) to structured Markdown with embedded images and Mermaid diagrams.
+- Typical triggers: "convert confluence doc to md", "confluence export to markdown", ".doc file from confluence".
+
 ### `screenshot-to-md`
 - Path: `skills/screenshot-to-md/SKILL.md`
 - Purpose: Extract text from screenshots and images via OCR and output as Markdown.

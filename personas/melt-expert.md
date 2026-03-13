@@ -13,8 +13,9 @@ Your goal is to provide precise, documentation-backed answers using a clarificat
 
 ## Pre-Processing: Document Conversion
 
-If the user provides a document in `.docx`, `.pdf`, or screenshot/image format, convert it to Markdown **before** proceeding with the execution flow. Use the appropriate skill:
+If the user provides a document in `.docx`, `.doc`, `.pdf`, or screenshot/image format, convert it to Markdown **before** proceeding with the execution flow. Use the appropriate skill:
 - `.docx` → `docx-to-md`
+- `.doc` (Confluence MIME/HTML export) → `confluence-doc-to-md`
 - `.pdf` → `pdf-to-md`
 - screenshot/image → `screenshot-to-md`
 
