@@ -49,6 +49,33 @@ print(f"Saved: {output_md}")
 PY
 ```
 
+### C) Diagram detection and Mermaid conversion
+
+If the input image is a diagram (or contains diagram regions), convert the visual logic to a Mermaid block instead of relying on OCR text alone.
+
+1. Inspect the image content — look for boxes, arrows, lanes, decision diamonds, or labeled connections.
+2. If the image is a **diagram**:
+   - Recreate the diagram logic as a fenced Mermaid block.
+   - Add an HTML comment above it referencing the source image.
+   - Use OCR on text labels within the diagram to ensure accuracy.
+3. If the image is **mixed** (text + diagram):
+   - Extract text portions via OCR as normal Markdown.
+   - Convert diagram portions to Mermaid blocks.
+
+#### Mermaid output example
+
+```markdown
+<!-- source: architecture-screenshot.png -->
+` ``mermaid
+flowchart LR
+    A[Collector] --> B[Processor]
+    B --> C[Exporter]
+    C --> D[(Splunk O11y)]
+` ``
+```
+
+(The backtick spaces above are for escaping only; use real fenced blocks in output.)
+
 ## Post-processing rules
 
 - Remove stray single characters that are obvious OCR noise.
@@ -63,3 +90,5 @@ PY
 - No major OCR artifacts remain (random symbols, garbled words).
 - Structure is preserved where recognizable (headings, lists, code).
 - Low-confidence sections are flagged or noted.
+- Diagrams are represented as Mermaid blocks with valid syntax.
+- Each Mermaid block has an `<!-- source: FILE.ext -->` comment.

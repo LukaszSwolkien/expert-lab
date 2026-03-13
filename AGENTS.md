@@ -33,6 +33,12 @@ Respect these instructions when provided by the user:
 - "Auto persona" -> choose persona from `personas/personas-map.md`.
 - `/none` -> skip persona selection entirely; respond without any persona style.
 
+## File Output Placement
+
+- Keep source documents (input files) separated from generated output files.
+- When source files reside in a `docs/` or `input/` subfolder, place generated files one level up from that folder (i.e., in the parent directory).
+- Never mix generated artifacts into the same directory as the source documents.
+
 ## Output Discipline
 
 - Always declare the active execution context at the start of each response:

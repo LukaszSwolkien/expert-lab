@@ -54,6 +54,30 @@ Skills are persona-agnostic and can be combined with any persona.
 2. Override when needed: `Use persona X`, `Use skills A, B`, or use a command shortcut.
 3. Execution order: select persona, select skills, execute with persona style + skill workflow.
 
+## Installing skills
+
+Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills available, either **symlink** or **copy** them.
+
+### Option A: Symlink (edits in repo are picked up automatically)
+
+```bash
+mkdir -p ~/.codex/skills
+for skill in docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+  ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
+done
+```
+
+### Option B: Copy (independent snapshot)
+
+```bash
+mkdir -p ~/.codex/skills
+for skill in docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+  cp -R "skills/${skill}" ~/.codex/skills/
+done
+```
+
+After installing, restart Cursor (or start a new agent session) so the skill list is reloaded.
+
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE).
