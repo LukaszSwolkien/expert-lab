@@ -18,6 +18,7 @@ skills/                 # how the assistant executes specific tasks
   docx-to-md/
   md-to-docx/
   md-to-pdf/
+  mermaid-diagrams/
   pdf-to-md/
   screenshot-to-md/
 AGENTS.md               # execution rules: persona + skill selection
@@ -45,6 +46,7 @@ Use `/none` to skip persona selection entirely.
 | [DOCX to Markdown](skills/docx-to-md/SKILL.md) | Convert Word documents to structured Markdown |
 | [Markdown to DOCX](skills/md-to-docx/SKILL.md) | Convert Markdown to Word documents |
 | [Markdown to PDF](skills/md-to-pdf/SKILL.md) | Export Markdown to PDF with Mermaid and LaTeX support |
+| [Mermaid Diagrams](skills/mermaid-diagrams/SKILL.md) | Create Mermaid diagrams for architecture, flow, and sequence views |
 | [PDF to Markdown](skills/pdf-to-md/SKILL.md) | Convert PDF to Markdown (text-first, OCR fallback) |
 | [Screenshot to Markdown](skills/screenshot-to-md/SKILL.md) | Extract text from screenshots via OCR to Markdown |
 
@@ -64,7 +66,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams pdf-to-md screenshot-to-md; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -73,7 +75,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams pdf-to-md screenshot-to-md; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```
