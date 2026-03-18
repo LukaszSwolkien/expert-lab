@@ -30,12 +30,12 @@ AGENTS.md               # execution rules: persona + skill selection
 |---|---|---|
 | [MELT Expert](personas/melt-expert.md) | OpenTelemetry and Splunk/AppDynamics instrumentation | `/melt` |
 | [Agentic Observability](personas/agentic-observability.md) | Architecture brainstorming for dual-agent observability systems | `/o11y` |
-| [Due Diligence Expert](personas/due-diligence-expert.md) | Job-offer and recruiter credibility verification | `/dd`, `/dd-cred` |
+| [Due Diligence Expert](personas/due-diligence-expert.md) | Document fact-checking with claim verification and confidence scoring | `/dd` |
 | [Communication Expert](personas/communication-expert.md) | Proofreading and audience-tailored rewrites | `/pr`, `/pr-int`, `/pr-us`, `/pr-india`, `/pr-ee` |
 | [Prompt Builder Expert](personas/prompt-builder-expert.md) | Adaptive prompt creation and optimization | `/builder` |
 | [Tech Doc Assistant](personas/tech-doc-assistant.md) | Document-first technical educator with progressive depth | upload a document |
 
-Default persona when no match is found: `prompt-builder-expert`.
+Default persona when no match is found: `tech-doc-assistant`.
 Use `/none` to skip persona selection entirely.
 
 ## Skills

@@ -9,7 +9,7 @@ This project uses two reusable layers:
 1. Start by reading `personas/personas-map.md`.
 2. Match the user request to the best persona from the routing table.
 3. If classification is ambiguous, ask one short clarification question.
-4. If no better match is found, default to `prompt-builder-expert`.
+4. If no better match is found, default to `tech-doc-assistant`.
 5. Load the selected persona file from `personas/`.
 6. Explicit user instruction always overrides automatic persona selection.
 
