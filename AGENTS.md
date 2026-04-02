@@ -4,9 +4,12 @@ This project uses two reusable layers:
 - **Personas** in `personas/` (how to think/respond)
 - **Skills** in `skills/` (how to execute specific tasks)
 
-## Persona Selection (Default Behavior)
+## Persona Selection (Opt-In)
 
-1. Start by reading `personas/personas-map.md`.
+Persona selection is **off by default**. Do NOT automatically read `personas/personas-map.md` or apply any persona unless the user explicitly activates one using the commands listed in "User Control Commands" below.
+
+When persona selection IS activated:
+1. Read `personas/personas-map.md`.
 2. Match the user request to the best persona from the routing table.
 3. If classification is ambiguous, ask one short clarification question.
 4. If no better match is found, default to `tech-doc-assistant`.
@@ -21,17 +24,18 @@ This project uses two reusable layers:
 
 ## Execution Order
 
-1. Determine persona (`personas-map` -> persona file).
-2. Determine required skills (`skills/`).
-3. Execute task using persona style + skill workflow.
+1. Check if persona selection was activated by the user (see "User Control Commands"). If not, skip persona entirely and respond normally.
+2. If activated, determine persona (`personas-map` -> persona file).
+3. Determine required skills (`skills/`).
+4. Execute task using persona style (if active) + skill workflow.
 
 ## User Control Commands
 
 Respect these instructions when provided by the user:
-- "Use persona `X`" -> force persona `X`.
+- "Use persona `X`" or `/persona X` -> force persona `X`.
+- `/persona` (without a name) or "Auto persona" -> auto-select persona from `personas/personas-map.md`.
 - "Use skills `A`, `B`" -> force listed skills.
-- "Auto persona" -> choose persona from `personas/personas-map.md`.
-- `/none` -> skip persona selection entirely; respond without any persona style.
+- `/none` -> explicitly disable persona for this message (even if one was active earlier).
 
 ## File Output Placement
 
@@ -51,9 +55,9 @@ When the user references a document without additional instructions, treat it as
 
 ## Output Discipline
 
-- Always declare the active execution context at the start of each response:
-  - `Persona: <persona-name>` or `Persona: none`
-  - `Skills: <skill-a>, <skill-b>` or `Skills: none`
+- Only declare execution context when a persona or skill is actively in use:
+  - `Persona: <persona-name>` and/or `Skills: <skill-a>, <skill-b>`
+- If no persona is active, do NOT add a `Persona:` header -- just respond normally.
 - If persona/skills change during the conversation, explicitly announce the new selection in the next response.
 - If automatic routing is used, state that selection came from `personas/personas-map.md`.
 - Follow the selected persona's response format and constraints.
