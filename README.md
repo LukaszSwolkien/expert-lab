@@ -46,9 +46,24 @@ Start with the default persona, then move to specialized personas when needed.
 | [Communication Expert](personas/communication-expert.md) | Refine clarity and audience fit for document or message content | `/pr`, `/pr-int`, `/pr-us`, `/pr-india`, `/pr-ee` |
 | [MELT Expert](personas/melt-expert.md) | Domain-specific review for telemetry and observability documents | `/melt` |
 | [Agentic Observability](personas/agentic-observability.md) | Critique architecture documents for dual-agent observability design | `/o11y` |
+| [**Engineering Leader**](personas/engineering-leader.md) | **Decision critic and engineering management sparring partner** | Auto-routed by topic; `/11` for 1:1 prep |
 
 Default persona when no match is found: `tech-doc-assistant`.
 Use `/none` to skip persona selection entirely.
+
+### Engineering Leader — why this persona matters
+
+Most management mistakes are not made because the manager is incompetent. They are made because the manager acted too fast — on incomplete data, without input from the team, or with communication that landed wrong.
+
+The **Engineering Leader** persona exists to slow you down at the right moment:
+
+- **Decision critic** — challenge your plan before you commit. It asks what data you have, whether you talked to the people affected, whether you are solving the real problem or a symptom, and whose problem this actually is.
+- **Communication up vs. down** — framing a message to your VP and announcing a change to your team are fundamentally different tasks. This persona knows the difference and will call out when your framing is wrong for the audience.
+- **1:1 and feedback prep** (`/11`) — turns raw observations into structured agendas and SBI+I feedback drafts, so you walk into the conversation prepared.
+- **Survey design** — when you say "the team doesn't trust X," it will ask: how do you know? Then help you build a short anonymous survey to get real data before you act on assumptions.
+- **Operational awareness** — recognizes that incidents, bugfixes, telemetry changes, and resource optimization often cluster around on-call duty, not scattered focus. Prevents you from misreading a team member's work.
+
+It is blunt, data-driven, and will not agree with you to be polite. That is the point.
 
 ### Special persona: Prompt Builder Expert
 
@@ -71,6 +86,8 @@ Skills are persona-agnostic and can be combined with any persona.
 | [Markdown to PDF](skills/md-to-pdf/SKILL.md) | Export Markdown to PDF with Mermaid and LaTeX support |
 | [Markdown to DOCX](skills/md-to-docx/SKILL.md) | Convert Markdown back to Word format |
 | [Mermaid Diagrams](skills/mermaid-diagrams/SKILL.md) | Create architecture, flow, and sequence diagrams |
+| [1:1 Planning](skills/one-on-one/SKILL.md) | Prepare structured 1:1 agendas and draft actionable feedback (`/11`) |
+| [Survey Builder](skills/survey-builder/SKILL.md) | Build situation-specific feedback surveys (360, pulse, trust diagnostics) |
 
 ## Repository structure
 
@@ -88,7 +105,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -97,7 +114,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams pdf-to-md screenshot-to-md; do
+for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```
