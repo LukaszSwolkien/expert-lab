@@ -34,6 +34,16 @@ This directory contains reusable skills for document conversion and extraction w
 - Purpose: Extract text from screenshots and images via OCR and output as Markdown.
 - Typical triggers: "read text from screenshot", "extract text from image", "screenshot to markdown".
 
+### `one-on-one`
+- Path: `skills/one-on-one/SKILL.md`
+- Purpose: Prepare structured 1:1 agendas and draft actionable feedback from raw observations or notes.
+- Typical triggers: `/11` command within the `engineering-leader` persona.
+
+### `survey-builder`
+- Path: `skills/survey-builder/SKILL.md`
+- Purpose: Build situation-specific feedback surveys (360, team pulse, trust diagnostics) with tailored questions, segmentation, and interpretation guides.
+- Typical triggers: Need to collect structured feedback before a people or team decision; `engineering-leader` persona identifies assumptions about team dynamics without supporting data.
+
 ## Conventions used in these skills
 
 - `SKILL.md` contains concise operational workflow and constraints.
