@@ -44,6 +44,11 @@ This directory contains reusable skills for document conversion and extraction w
 - Purpose: Build situation-specific feedback surveys (360, team pulse, trust diagnostics) with tailored questions, segmentation, and interpretation guides.
 - Typical triggers: Need to collect structured feedback before a people or team decision; `engineering-leader` persona identifies assumptions about team dynamics without supporting data.
 
+### `marp-splunk-presentation`
+- Path: `skills/marp-splunk-presentation/SKILL.md`
+- Purpose: Build and polish Marp decks with a separate Splunk-branded CSS theme, local logo assets, and reliable preview/theme wiring.
+- Typical triggers: "create Marp presentation", "apply Splunk theme", "fix Marp preview default theme", "add presentation footer logo/header gradient".
+
 ## Conventions used in these skills
 
 - `SKILL.md` contains concise operational workflow and constraints.
