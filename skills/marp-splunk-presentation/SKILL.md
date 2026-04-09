@@ -5,6 +5,13 @@ description: Build, style, and export Marp slide decks with a separate Splunk-br
 
 # Marp + Splunk Presentation
 
+## Slash commands
+
+- `/pptx <file>` — export the given Marp `.md` file to PPTX
+- `/pdf <file>` — export the given Marp `.md` file to PDF
+
+When the user sends a slash command, skip all other steps and go straight to export (Step 8) using `--allow-local-files`. Place the output next to the source file with the matching extension.
+
 ## When to use
 
 Use this skill when the user asks to:
