@@ -1,5 +1,7 @@
 # Expert Lab
 
+Built by [Lukasz Swolkien](https://linkedin.com/in/lukaszswolkien) — Senior Engineering Manager leading observability teams. I built this to make my own leadership work faster and more rigorous, and I use it daily.
+
 A collection of AI personas and reusable skills for professional work — leadership decisions, technical review, domain expertise, and document intelligence.
 
 Personas define how the AI thinks (decision critic, domain expert, communication coach). Skills define repeatable execution (1:1 prep, surveys, document conversion, presentations). You describe the problem; the system picks the right advisor and toolset. No prompt engineering required.
@@ -66,6 +68,10 @@ The agent enters review mode: divides the document into logical parts, presents 
 - **Document conversations over summaries.** Section-by-section dialogue that preserves nuance instead of stripping it.
 - **Reusable skills.** Leadership workflows (1:1 prep, surveys, presentations) and document conversions are codified and repeatable.
 - **Plain Markdown instructions.** No build step, no platform lock-in.
+
+## FAQ
+
+Common questions about the approach, trust, practicality, and how it compares to tools like Rovo and Copilot: **[Frequently Asked Questions](QA.md)**
 
 ## Personas
 
