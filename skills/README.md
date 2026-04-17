@@ -1,6 +1,6 @@
 # Project Skills Index
 
-This directory contains reusable skills for document conversion and extraction workflows.
+This directory contains reusable, persona-agnostic skills. Each skill defines a self-contained workflow that can be invoked from any persona or with no persona active. Some skills are triggered by slash commands (e.g., `/pr`, `/dd`, `/11`).
 
 ## Available skills
 
@@ -34,6 +34,16 @@ This directory contains reusable skills for document conversion and extraction w
 - Purpose: Extract text from screenshots and images via OCR and output as Markdown.
 - Typical triggers: "read text from screenshot", "extract text from image", "screenshot to markdown".
 
+### `comms-proofreader`
+- Path: `skills/comms-proofreader/SKILL.md`
+- Purpose: Evaluate and refine messages for different audiences (International, US, India, Eastern Europe) with grammar scoring, cultural fit analysis, and audience-tailored rewrites.
+- Typical triggers: `/pr`, `/pr-int`, `/pr-us`, `/pr-india`, `/pr-ee`.
+
+### `due-diligence`
+- Path: `skills/due-diligence/SKILL.md`
+- Purpose: Verify factual claims in technical documents with evidence-based analysis, confidence scoring, and decision-risk guidance.
+- Typical triggers: `/dd`, "fact-check this document", "verify the claims in this proposal".
+
 ### `one-on-one`
 - Path: `skills/one-on-one/SKILL.md`
 - Purpose: Prepare structured 1:1 agendas and draft actionable feedback from raw observations or notes.
@@ -44,10 +54,15 @@ This directory contains reusable skills for document conversion and extraction w
 - Purpose: Build situation-specific feedback surveys (360, team pulse, trust diagnostics) with tailored questions, segmentation, and interpretation guides.
 - Typical triggers: Need to collect structured feedback before a people or team decision; `engineering-leader` persona identifies assumptions about team dynamics without supporting data.
 
+### `o11y-people-context` *(personal skill)*
+- Path: `~/.cursor/skills/o11y-people-context/SKILL.md`
+- Purpose: Retrieve a person's profile from the O11y org data (title, team, ownership areas, Slack channels, escalation context) to prepare for discussions, feedback, or 1:1s.
+- Typical triggers: `/whois <name>`, "tell me about X", "context on X", "who is X", "background on X before our meeting".
+
 ### `marp-splunk-presentation`
 - Path: `skills/marp-splunk-presentation/SKILL.md`
 - Purpose: Build and polish Marp decks with a separate Splunk-branded CSS theme, local logo assets, and reliable preview/theme wiring.
-- Typical triggers: "create Marp presentation", "apply Splunk theme", "fix Marp preview default theme", "add presentation footer logo/header gradient".
+- Typical triggers: `/pdf`, `/pptx`, "create Marp presentation", "apply Splunk theme", "fix Marp preview default theme", "add presentation footer logo/header gradient".
 
 ## Conventions used in these skills
 

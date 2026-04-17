@@ -82,8 +82,6 @@ Personas define how the assistant thinks and responds. The system auto-selects f
 | Persona | Role | Command |
 |---|---|---|
 | [**Engineering Leader**](personas/engineering-leader.md) | Decision critic and sparring partner — challenges plans, preps 1:1s, stress-tests communication | Auto-routed by topic; `/11` for 1:1 prep |
-| [Communication Expert](personas/communication-expert.md) | Audience-tailored rewrites by region and stakeholder | `/pr`, `/pr-int`, `/pr-us`, `/pr-india`, `/pr-ee` |
-| [Due Diligence Expert](personas/due-diligence-expert.md) | Verify claims, evidence, and decision risk | `/dd` |
 
 ### Technical & domain expertise
 
@@ -126,6 +124,8 @@ Skills are persona-agnostic and can be combined with any persona.
 |---|---|
 | [1:1 Planning](skills/one-on-one/SKILL.md) | Prepare structured 1:1 agendas and draft actionable feedback (`/11`) |
 | [Survey Builder](skills/survey-builder/SKILL.md) | Build situation-specific feedback surveys (360, pulse, trust diagnostics) |
+| [Comms Proofreader](skills/comms-proofreader/SKILL.md) | Evaluate and refine messages for different audiences with grammar scoring and cultural fit (`/pr`) |
+| [Due Diligence](skills/due-diligence/SKILL.md) | Verify factual claims with evidence-based analysis, confidence scoring, and decision-risk guidance (`/dd`) |
 | [Marp Splunk Presentation](skills/marp-splunk-presentation/SKILL.md) | Build and export Splunk-branded slide decks (`/pdf`, `/pptx`) |
 
 ### Document conversion & diagrams
@@ -169,7 +169,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -178,7 +178,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in confluence-doc-to-md docx-to-md md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```
