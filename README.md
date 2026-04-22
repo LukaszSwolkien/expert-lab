@@ -138,6 +138,7 @@ Skills are persona-agnostic and can be combined with any persona.
 | [Screenshot to Markdown](skills/screenshot-to-md/SKILL.md) | Extract text from screenshots via OCR |
 | [Markdown to PDF](skills/md-to-pdf/SKILL.md) | Export Markdown to PDF with Mermaid and LaTeX support |
 | [Markdown to DOCX](skills/md-to-docx/SKILL.md) | Convert Markdown back to Word format |
+| [Markdown to Confluence](skills/md-to-confluence/SKILL.md) | Convert Markdown to Confluence-ready HTML (or DOCX round-trip) for clean copy-paste |
 | [Mermaid Diagrams](skills/mermaid-diagrams/SKILL.md) | Create architecture, flow, and sequence diagrams |
 
 ## Document Review Mode
@@ -169,7 +170,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -178,7 +179,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```

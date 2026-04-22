@@ -14,6 +14,11 @@ This directory contains reusable, persona-agnostic skills. Each skill defines a 
 - Purpose: Convert Markdown to Word (`.docx`) with preserved structure and links.
 - Typical triggers: "md to docx", "markdown to word", "convert md to word document".
 
+### `md-to-confluence`
+- Path: `skills/md-to-confluence/SKILL.md`
+- Purpose: Convert Markdown to HTML (or point to Word) for copy-paste or import into Confluence; documents API/automation as an alternative.
+- Typical triggers: "md to confluence", "markdown to confluence", "paste markdown in confluence", "wiki from markdown", "confluence page from .md".
+
 ### `md-to-pdf`
 - Path: `skills/md-to-pdf/SKILL.md`
 - Purpose: Convert Markdown to PDF with Mermaid and LaTeX rendering.
