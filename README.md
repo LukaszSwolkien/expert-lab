@@ -66,7 +66,7 @@ The agent enters review mode: divides the document into logical parts, presents 
 - **Sparring partner, not a yes-machine.** The engineering-leader persona challenges first, agrees later — only when convinced. It will not validate your idea to be polite.
 - **Persona routing.** Describe the problem; the system picks the right advisor. No prompt engineering required.
 - **Document conversations over summaries.** Section-by-section dialogue that preserves nuance instead of stripping it.
-- **Reusable skills.** Leadership workflows (1:1 prep, surveys, presentations) and document conversions are codified and repeatable.
+- **Reusable skills.** Leadership workflows (decision review, org design, communication framing, 1:1 prep, surveys, artifacts) and document conversions are codified and repeatable.
 - **Plain Markdown instructions.** No build step, no platform lock-in.
 
 ## FAQ
@@ -106,8 +106,8 @@ Most management mistakes happen because the manager acted too fast — on incomp
 
 The **Engineering Leader** persona exists to slow you down at the right moment:
 
-- **Decision critic** — challenges your plan before you commit. Asks what data you have, whether you talked to the people affected, and whether you are solving the real problem or a symptom.
-- **Communication up vs. down** — framing a message to your VP and announcing a change to your team are fundamentally different tasks. This persona knows the difference and calls out when your framing is wrong.
+- **Decision critic** — keeps the stance: challenge first, agree later, and do not validate weak plans to be polite.
+- **Skill routing** — routes repeatable work into focused workflows: decision review, org design, leadership communication, 1:1 prep, surveys, and management artifacts.
 - **1:1 and feedback prep** (`/11`) — turns raw observations into structured agendas and SBI+I feedback drafts.
 - **Survey design** — when you say "the team doesn't trust X," it asks: how do you know? Then helps you build a survey to get real data before you act on assumptions.
 - **Operational awareness** — recognizes that incidents, bugfixes, and telemetry work cluster around on-call duty, preventing you from misreading a team member's contributions.
@@ -122,6 +122,10 @@ Skills are persona-agnostic and can be combined with any persona.
 
 | Skill | Description |
 |---|---|
+| [Leadership Decision Review](skills/leadership-decision-review/SKILL.md) | Pressure-test engineering leadership decisions before action |
+| [Org Design Review](skills/org-design-review/SKILL.md) | Review team topology, ownership boundaries, reorgs, and capacity models |
+| [Leadership Communication](skills/leadership-communication/SKILL.md) | Draft or critique high-stakes messages up, down, or across stakeholders |
+| [Management Artifact Builder](skills/management-artifact-builder/SKILL.md) | Create practical OKRs, charters, RACI, decision records, scorecards, and retrospectives |
 | [1:1 Planning](skills/one-on-one/SKILL.md) | Prepare structured 1:1 agendas and draft actionable feedback (`/11`) |
 | [Survey Builder](skills/survey-builder/SKILL.md) | Build situation-specific feedback surveys (360, pulse, trust diagnostics) |
 | [Comms Proofreader](skills/comms-proofreader/SKILL.md) | Evaluate and refine messages for different audiences with grammar scoring and cultural fit (`/pr`) |
@@ -170,7 +174,7 @@ Agent runtimes discover skills from `~/.codex/skills/`. To make the repo skills 
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence leadership-communication leadership-decision-review management-artifact-builder md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one org-design-review pdf-to-md screenshot-to-md survey-builder; do
   ln -sfn "$(pwd)/skills/${skill}" ~/.codex/skills/${skill}
 done
 ```
@@ -179,7 +183,7 @@ done
 
 ```bash
 mkdir -p ~/.codex/skills
-for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one pdf-to-md screenshot-to-md survey-builder; do
+for skill in comms-proofreader confluence-doc-to-md docx-to-md due-diligence leadership-communication leadership-decision-review management-artifact-builder md-to-confluence md-to-docx md-to-pdf marp-splunk-presentation mermaid-diagrams one-on-one org-design-review pdf-to-md screenshot-to-md survey-builder; do
   cp -R "skills/${skill}" ~/.codex/skills/
 done
 ```
