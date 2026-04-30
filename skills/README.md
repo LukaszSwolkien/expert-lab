@@ -49,6 +49,26 @@ This directory contains reusable, persona-agnostic skills. Each skill defines a 
 - Purpose: Verify factual claims in technical documents with evidence-based analysis, confidence scoring, and decision-risk guidance.
 - Typical triggers: `/dd`, "fact-check this document", "verify the claims in this proposal".
 
+### `leadership-decision-review`
+- Path: `skills/leadership-decision-review/SKILL.md`
+- Purpose: Pressure-test engineering leadership decisions before action, including diagnosis, assumptions, risks, alternatives, and next steps.
+- Typical triggers: "challenge this decision", "pressure-test this plan", delivery/process change, technical strategy trade-off, transformation proposal, people/performance signal review.
+
+### `leadership-communication`
+- Path: `skills/leadership-communication/SKILL.md`
+- Purpose: Draft or critique high-stakes engineering leadership communication up, down, or across stakeholders.
+- Typical triggers: leadership update, team announcement, escalation, hard news, change message, "help me frame this to my VP/team".
+
+### `management-artifact-builder`
+- Path: `skills/management-artifact-builder/SKILL.md`
+- Purpose: Create or review ready-to-use engineering management artifacts.
+- Typical triggers: OKRs, team charter, ownership matrix, RACI, decision record, hiring scorecard, interview plan, retro format, stakeholder plan.
+
+### `org-design-review`
+- Path: `skills/org-design-review/SKILL.md`
+- Purpose: Review team topology, reorg proposals, ownership boundaries, capacity models, hiring structures, and dependency design.
+- Typical triggers: team split/merge, reorg, squad model, ownership boundaries, team topology, capacity planning.
+
 ### `one-on-one`
 - Path: `skills/one-on-one/SKILL.md`
 - Purpose: Prepare structured 1:1 agendas and draft actionable feedback from raw observations or notes.
